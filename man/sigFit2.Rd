@@ -18,7 +18,7 @@ sigFit2(
 )
 }
 \arguments{
-\item{dataInput}{data.frame or list with `$timeIntensityData`.}
+\item{dataInput}{data.frame or list with \verb{$timeIntensityData}.}
 
 \item{tryCounter}{Integer: which random‐start iteration this is.}
 
@@ -28,15 +28,15 @@ sigFit2(
 
 \item{upperBounds}{Named vector of upper bounds.}
 
-\item{min_Factor}{Passed to `nlsLM()`.}
+\item{min_Factor}{Passed to \code{nlsLM()}.}
 
-\item{n_iterations}{Max iterations for `nlsLM()`.}
+\item{n_iterations}{Max iterations for \code{nlsLM()}.}
 }
 \value{
 A one‐row data.frame of estimates, fit‐statistics, and
-  `h0_Estimate`.
+\code{h0_Estimate}.
 }
 \description{
-Fits `doubleSigmoidalFitFormula_h0()` to a `data.frame(time, intensity)`
-via `minpack.lm::nlsLM()`, appending h0 and AIC/BIC.
+Fits \code{doubleSigmoidalFitFormula_h0()} to a \code{data.frame(time, intensity)}
+via \code{minpack.lm::nlsLM()}, appending h0 and AIC/BIC.
 }

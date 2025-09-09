@@ -1,71 +1,3 @@
-#' Preliminary Categorization of Signal Presence
-#'
-#' Conducts the first screening step on normalized time–intensity data to
-#' decide whether there is any signal worth fitting, based on intensity
-#' range and maximum thresholds.
-#'
-#' @param normalizedInput A list returned by \code{\link{normalizeData_h0}},
-#'   containing at least the fields:
-#'   \describe{
-#'     \item{\code{dataInputName}}{Original name of the data input.}
-#'     \item{\code{dataScalingParameters}}{A list with elements
-#'       \code{intensityMax} and \code{intensityRange}.}
-#'   }
-#' @param threshold_intensity_range Numeric scalar. Minimum fraction of the
-#'   full intensity range that must be spanned to consider there is any
-#'   dynamic change. Defaults to \code{0.1}.
-#' @param threshold_minimum_for_intensity_maximum Numeric scalar. Minimum
-#'   fraction of the maximum intensity that must be exceeded to consider
-#'   a signal. Defaults to \code{0.3}.
-#'
-#' @return A named list with elements:
-#'   \describe{
-#'     \item{\code{dataInputName}}{As in \code{normalizedInput}.}
-#'     \item{\code{intensityMaximum}}{Observed maximum intensity of the data.}
-#'     \item{\code{test.minimum_for_intensity_maximum}}{Logical; \code{TRUE}
-#'       if \code{intensityMaximum} exceeds \code{threshold_minimum_for_intensity_maximum}.}
-#'     \item{\code{intensityRange}}{Observed intensity range of the data.}
-#'     \item{\code{test.intensity_range}}{Logical; \code{TRUE} if
-#'       \code{intensityRange} exceeds \code{threshold_intensity_range}.}
-#'     \item{\code{decision}}{Character; \code{"not_no_signal"} if both tests
-#'       pass, otherwise \code{"no_signal"}.}
-#'     \item{\code{decisionSteps}}{String summarizing which sub-steps were
-#'       triggered (e.g. \code{"1a_1b_1c"}).}
-#'   }
-#'
-#' @export
-preCategorize_h0 <- function (normalizedInput, threshold_intensity_range = 0.1,
-                              threshold_minimum_for_intensity_maximum = 0.3)
-{
-  decisionList <- list()
-  decisionList$dataInputName <- normalizedInput$dataInputName
-  decisionList$intensityMaximum <- normalizedInput$dataScalingParameters[["intensityMax"]]
-  decisionList$threshold_minimum_for_intensity_maximum <- threshold_minimum_for_intensity_maximum
-  decisionList$test.minimum_for_intensity_maximum <- threshold_minimum_for_intensity_maximum <
-    decisionList$intensityMaximum
-  decisionList$intensityRange <- normalizedInput$dataScalingParameters[["intensityRange"]]
-  decisionList$threshold_intensity_range <- threshold_intensity_range
-  decisionList$test.intensity_range <- threshold_intensity_range <
-    decisionList$intensityRange
-  choices <- c("no_signal", "sigmoidal", "double_sigmoidal",
-               "ambiguous")
-  decisonSteps <- c()
-  if (!decisionList$test.minimum_for_intensity_maximum) {
-    decisonSteps <- c(decisonSteps, "1a")
-  }
-  if (!decisionList$test.minimum_for_intensity_maximum) {
-    decisonSteps <- c(decisonSteps, "1b")
-  }
-  if (!setequal(choices, c("no_signal"))) {
-    decisonSteps <- c(decisonSteps, "1c")
-  }
-  decisionList$decisonSteps <- paste0(decisonSteps, collapse = "_")
-  decisionList$decision <- ifelse(decisionList$test.minimum_for_intensity_maximum &
-                                    decisionList$test.intensity_range, "not_no_signal",
-                                  "no_signal")
-  return(decisionList)
-}
-
 #' Decide between Sigmoidal and Double-Sigmoidal Fits
 #'
 #' Runs a series of logical and AIC‐based tests to choose the best model
@@ -307,3 +239,72 @@ Categorize_h0 <- function (parameterVectorSigmoidal, parameterVectorDoubleSigmoi
   }
   return(decisionList)
 }
+
+#' Preliminary Categorization of Signal Presence
+#'
+#' Conducts the first screening step on normalized time–intensity data to
+#' decide whether there is any signal worth fitting, based on intensity
+#' range and maximum thresholds.
+#'
+#' @param normalizedInput A list returned by \code{\link{normalizeData_h0}},
+#'   containing at least the fields:
+#'   \describe{
+#'     \item{\code{dataInputName}}{Original name of the data input.}
+#'     \item{\code{dataScalingParameters}}{A list with elements
+#'       \code{intensityMax} and \code{intensityRange}.}
+#'   }
+#' @param threshold_intensity_range Numeric scalar. Minimum fraction of the
+#'   full intensity range that must be spanned to consider there is any
+#'   dynamic change. Defaults to \code{0.1}.
+#' @param threshold_minimum_for_intensity_maximum Numeric scalar. Minimum
+#'   fraction of the maximum intensity that must be exceeded to consider
+#'   a signal. Defaults to \code{0.3}.
+#'
+#' @return A named list with elements:
+#'   \describe{
+#'     \item{\code{dataInputName}}{As in \code{normalizedInput}.}
+#'     \item{\code{intensityMaximum}}{Observed maximum intensity of the data.}
+#'     \item{\code{test.minimum_for_intensity_maximum}}{Logical; \code{TRUE}
+#'       if \code{intensityMaximum} exceeds \code{threshold_minimum_for_intensity_maximum}.}
+#'     \item{\code{intensityRange}}{Observed intensity range of the data.}
+#'     \item{\code{test.intensity_range}}{Logical; \code{TRUE} if
+#'       \code{intensityRange} exceeds \code{threshold_intensity_range}.}
+#'     \item{\code{decision}}{Character; \code{"not_no_signal"} if both tests
+#'       pass, otherwise \code{"no_signal"}.}
+#'     \item{\code{decisionSteps}}{String summarizing which sub-steps were
+#'       triggered (e.g. \code{"1a_1b_1c"}).}
+#'   }
+#'
+#' @export
+preCategorize_h0 <- function (normalizedInput, threshold_intensity_range = 0.1,
+                              threshold_minimum_for_intensity_maximum = 0.3)
+{
+  decisionList <- list()
+  decisionList$dataInputName <- normalizedInput$dataInputName
+  decisionList$intensityMaximum <- normalizedInput$dataScalingParameters[["intensityMax"]]
+  decisionList$threshold_minimum_for_intensity_maximum <- threshold_minimum_for_intensity_maximum
+  decisionList$test.minimum_for_intensity_maximum <- threshold_minimum_for_intensity_maximum <
+    decisionList$intensityMaximum
+  decisionList$intensityRange <- normalizedInput$dataScalingParameters[["intensityRange"]]
+  decisionList$threshold_intensity_range <- threshold_intensity_range
+  decisionList$test.intensity_range <- threshold_intensity_range <
+    decisionList$intensityRange
+  choices <- c("no_signal", "sigmoidal", "double_sigmoidal",
+               "ambiguous")
+  decisonSteps <- c()
+  if (!decisionList$test.minimum_for_intensity_maximum) {
+    decisonSteps <- c(decisonSteps, "1a")
+  }
+  if (!decisionList$test.minimum_for_intensity_maximum) {
+    decisonSteps <- c(decisonSteps, "1b")
+  }
+  if (!setequal(choices, c("no_signal"))) {
+    decisonSteps <- c(decisonSteps, "1c")
+  }
+  decisionList$decisonSteps <- paste0(decisonSteps, collapse = "_")
+  decisionList$decision <- ifelse(decisionList$test.minimum_for_intensity_maximum &
+                                    decisionList$test.intensity_range, "not_no_signal",
+                                  "no_signal")
+  return(decisionList)
+}
+

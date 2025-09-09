@@ -18,7 +18,7 @@ f0(x, B1, M1, B2, L)
 \item{L}{Distance between the two midpoints.}
 }
 \value{
-Numeric vector of the same length as `x`.
+Numeric vector of the same length as \code{x}.
 }
 \description{
 A helper “base” function used internally by the double‐sigmoidal fit formula.

@@ -14,9 +14,9 @@ preCategorize_h0(
 \item{normalizedInput}{A list returned by \code{\link{normalizeData_h0}},
 containing at least the fields:
 \describe{
-  \item{\code{dataInputName}}{Original name of the data input.}
-  \item{\code{dataScalingParameters}}{A list with elements
-    \code{intensityMax} and \code{intensityRange}.}
+\item{\code{dataInputName}}{Original name of the data input.}
+\item{\code{dataScalingParameters}}{A list with elements
+\code{intensityMax} and \code{intensityRange}.}
 }}
 
 \item{threshold_intensity_range}{Numeric scalar. Minimum fraction of the
@@ -29,19 +29,19 @@ a signal. Defaults to \code{0.3}.}
 }
 \value{
 A named list with elements:
-  \describe{
-    \item{\code{dataInputName}}{As in \code{normalizedInput}.}
-    \item{\code{intensityMaximum}}{Observed maximum intensity of the data.}
-    \item{\code{test.minimum_for_intensity_maximum}}{Logical; \code{TRUE}
-      if \code{intensityMaximum} exceeds \code{threshold_minimum_for_intensity_maximum}.}
-    \item{\code{intensityRange}}{Observed intensity range of the data.}
-    \item{\code{test.intensity_range}}{Logical; \code{TRUE} if
-      \code{intensityRange} exceeds \code{threshold_intensity_range}.}
-    \item{\code{decision}}{Character; \code{"not_no_signal"} if both tests
-      pass, otherwise \code{"no_signal"}.}
-    \item{\code{decisionSteps}}{String summarizing which sub-steps were
-      triggered (e.g. \code{"1a_1b_1c"}).}
-  }
+\describe{
+\item{\code{dataInputName}}{As in \code{normalizedInput}.}
+\item{\code{intensityMaximum}}{Observed maximum intensity of the data.}
+\item{\code{test.minimum_for_intensity_maximum}}{Logical; \code{TRUE}
+if \code{intensityMaximum} exceeds \code{threshold_minimum_for_intensity_maximum}.}
+\item{\code{intensityRange}}{Observed intensity range of the data.}
+\item{\code{test.intensity_range}}{Logical; \code{TRUE} if
+\code{intensityRange} exceeds \code{threshold_intensity_range}.}
+\item{\code{decision}}{Character; \code{"not_no_signal"} if both tests
+pass, otherwise \code{"no_signal"}.}
+\item{\code{decisionSteps}}{String summarizing which sub-steps were
+triggered (e.g. \code{"1a_1b_1c"}).}
+}
 }
 \description{
 Conducts the first screening step on normalized time–intensity data to

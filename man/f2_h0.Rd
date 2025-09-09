@@ -13,7 +13,7 @@ f2_h0(x, A2, Ka, B1, M1, B2, L, const, argument, h0)
 
 \item{Ka}{Maximum plateau height.}
 
-\item{B1}{First slope (see `f0()`).}
+\item{B1}{First slope (see \code{f0()}).}
 
 \item{M1}{First midpoint.}
 
@@ -21,17 +21,17 @@ f2_h0(x, A2, Ka, B1, M1, B2, L, const, argument, h0)
 
 \item{L}{Midpoint distance.}
 
-\item{const}{Normalizing constant (value of `f0()` at its peak).}
+\item{const}{Normalizing constant (value of \code{f0()} at its peak).}
 
 \item{argument}{Switch point on the x‐axis.}
 
 \item{h0}{Baseline intensity.}
 }
 \value{
-Numeric vector of same length as `x`.
+Numeric vector of same length as \code{x}.
 }
 \description{
-Internal helper that stitches together two scaled copies of `f0()` at a
+Internal helper that stitches together two scaled copies of \code{f0()} at a
 switch point.
 }
 \keyword{internal}

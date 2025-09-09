@@ -15,10 +15,10 @@ from a list‐based fit (needs renormalization), \code{FALSE} otherwise.}
 }
 \value{
 Data frame with added or overwritten columns
-  \code{h0_Estimate}, \code{maximum_Estimate}, \code{slopeParam_Estimate},
-  and \code{midPoint_Estimate} on the original scale.
+\code{h0_Estimate}, \code{maximum_Estimate}, \code{slopeParam_Estimate},
+and \code{midPoint_Estimate} on the original scale.
 }
 \description{
 Transform normalized parameter estimates back to the
-  original data scale, or pass through raw estimates unchanged.
+original data scale, or pass through raw estimates unchanged.
 }

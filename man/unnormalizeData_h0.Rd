@@ -12,8 +12,8 @@ containing \code{timeIntensityData} and \code{dataScalingParameters}.}
 }
 \value{
 A list with component:
-  \item{timeIntensityData}{data.frame of original \code{time} and
-    \code{intensity} values.}
+\item{timeIntensityData}{data.frame of original \code{time} and
+\code{intensity} values.}
 }
 \description{
 Reverses the transformation applied by \code{\link{normalizeData_h0}},

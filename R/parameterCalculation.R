@@ -50,6 +50,10 @@ parameterCalculation<-function(parameterVector, stepSize=0.00001){
     parameterVector$midPoint_x <- parameterVector$midPoint_Estimate
     parameterVector$midPoint_y <- parameterVector$maximum_y / 2
 
+    if (parameterVector$slopeParam_Estimate <= 0) {
+      warning("slopeParam_Estimate should be > 0 for increasing sigmoids.")
+    }
+
     # calculate slope of midpoint
     parameterVector$slope <- parameterVector$slopeParam_Estimate * parameterVector$maximum_y * (1/4)
 

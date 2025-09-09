@@ -11,13 +11,13 @@ f_slope_doublesigmoidal_h0(x, parameterDf, timeStep = 1e-05)
 
 \item{parameterDf}{A named list or data frame of fitted parameters, including:
 \describe{
-  \item{\code{finalAsymptoteIntensityRatio_Estimate}}{Final ratio.}
-  \item{\code{maximum_Estimate}}{Maximum intensity.}
-  \item{\code{slope1Param_Estimate}}{Rising slope parameter.}
-  \item{\code{midPoint1Param_Estimate}}{Rising midpoint.}
-  \item{\code{slope2Param_Estimate}}{Declining slope parameter.}
-  \item{\code{midPointDistanceParam_Estimate}}{Distance between midpoints.}
-  \item{\code{h0_Estimate}}{Baseline intensity.}
+\item{\code{finalAsymptoteIntensityRatio_Estimate}}{Final ratio.}
+\item{\code{maximum_Estimate}}{Maximum intensity.}
+\item{\code{slope1Param_Estimate}}{Rising slope parameter.}
+\item{\code{midPoint1Param_Estimate}}{Rising midpoint.}
+\item{\code{slope2Param_Estimate}}{Declining slope parameter.}
+\item{\code{midPointDistanceParam_Estimate}}{Distance between midpoints.}
+\item{\code{h0_Estimate}}{Baseline intensity.}
 }}
 
 \item{timeStep}{Numeric; small increment used for finite differences. Default 1e-05.}
@@ -27,6 +27,6 @@ Numeric scalar: approximate slope (dY/dX) at \code{x}.
 }
 \description{
 Approximates the first derivative of the fitted
-  double‐sigmoidal curve at time \code{x} using a 5‐point stencil.
+double‐sigmoidal curve at time \code{x} using a 5‐point stencil.
 }
 \keyword{internal}

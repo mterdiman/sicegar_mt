@@ -31,17 +31,17 @@ sigFit(
 }
 \value{
 Data frame of parameter estimates and fit diagnostics, including:
-  \describe{
-    \item{\code{*_N_Estimate}}{Raw normalized estimates.}
-    \item{\code{*_Estimate}}{Renormalized estimates on the original scale.}
-    \item{\code{residual_Sum_of_Squares}, \code{AIC_value}, \code{BIC_value}}{
-      Fit diagnostics: sum of squared residuals, Akaike’s IC, Bayesian IC, etc.}
-    \item{\code{isThisaFit}}{Logical indicating successful convergence.}
-  }
+\describe{
+\item{\code{*_N_Estimate}}{Raw normalized estimates.}
+\item{\code{*_Estimate}}{Renormalized estimates on the original scale.}
+\item{\code{residual_Sum_of_Squares}, \code{AIC_value}, \code{BIC_value}}{
+Fit diagnostics: sum of squared residuals, Akaike’s IC, Bayesian IC, etc.}
+\item{\code{isThisaFit}}{Logical indicating successful convergence.}
+}
 }
 \description{
 Attempt to fit a 4‐parameter sigmoidal curve with baseline
-  using \code{nlsLM}. Multiple random restarts may be used internally.
+using \code{nlsLM}. Multiple random restarts may be used internally.
 }
 \examples{
 df <- data.frame(time = seq(0, 100, 10),

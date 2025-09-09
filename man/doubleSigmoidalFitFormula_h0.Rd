@@ -33,8 +33,8 @@ doubleSigmoidalFitFormula_h0(
 \item{h0}{Baseline when x is negative infinity.}
 }
 \value{
-Numeric vector of same length as `x`.
+Numeric vector of same length as \code{x}.
 }
 \description{
-Evaluates the full 5‐parameter “rise+fall” model at `x`.
+Evaluates the full 5‐parameter “rise+fall” model at \code{x}.
 }

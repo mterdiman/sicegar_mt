@@ -22,7 +22,7 @@ Numeric vector of model‐predicted intensities.
 }
 \description{
 Compute the sigmoidal curve value at given time points,
-  allowing a nonzero baseline (\code{h0}).
+allowing a nonzero baseline (\code{h0}).
 }
 \examples{
 time <- seq(0, 100, length.out = 50)

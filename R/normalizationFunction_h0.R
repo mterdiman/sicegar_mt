@@ -25,11 +25,14 @@ normalizeData_h0 <- function (dataInput, dataInputName = NA)
   timeData <- dataInput$time
   timeRange <- max(timeData, na.rm = T)
   timeData <- timeData/timeRange
+
   intensityMin <- min(dataInput$intensity, na.rm = T)
   intensityMax <- max(dataInput$intensity, na.rm = T)
+
   intensityData <- dataInput$intensity - intensityMin
   intensityRange <- max(intensityData, na.rm = T)
   intensityData <- intensityData/intensityRange
+
   dataOutput <- data.frame(time = timeData, intensity = intensityData)
   return(list(timeIntensityData = dataOutput, dataScalingParameters = c(timeRange = timeRange,
                                                                         intensityMin = intensityMin, intensityMax = intensityMax,

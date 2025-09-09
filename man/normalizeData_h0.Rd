@@ -15,12 +15,12 @@ the input dataset.}
 }
 \value{
 A list with components:
-  \item{timeIntensityData}{data.frame of normalized \code{time} and
-    \code{intensity} in \code{[0,1]}.}
-  \item{dataScalingParameters}{numeric vector with
-    \code{timeRange}, \code{intensityMin}, \code{intensityMax}, and
-    \code{intensityRange} used for normalization.}
-  \item{dataInputName}{the original \code{dataInputName} value.}
+\item{timeIntensityData}{data.frame of normalized \code{time} and
+\code{intensity} in \code{[0,1]}.}
+\item{dataScalingParameters}{numeric vector with
+\code{timeRange}, \code{intensityMin}, \code{intensityMax}, and
+\code{intensityRange} used for normalization.}
+\item{dataInputName}{the original \code{dataInputName} value.}
 }
 \description{
 Scales a two-column data frame of raw time and intensity values so that

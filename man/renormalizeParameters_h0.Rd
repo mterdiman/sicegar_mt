@@ -7,15 +7,15 @@
 renormalizeParameters_h0(parameterDF, isalist)
 }
 \arguments{
-\item{parameterDF}{Data.frame with columns `*_N_Estimate` and
-`dataScalingParameters.*`.}
+\item{parameterDF}{Data.frame with columns \verb{*_N_Estimate} and
+\verb{dataScalingParameters.*}.}
 
-\item{isalist}{Logical; if `TRUE` input came from a list,
+\item{isalist}{Logical; if \code{TRUE} input came from a list,
 otherwise already raw.}
 }
 \value{
-A one‐row data.frame with `*_Estimate` columns on the raw
-  scale (including `h0_Estimate`).
+A one‐row data.frame with \verb{*_Estimate} columns on the raw
+scale (including \code{h0_Estimate}).
 }
 \description{
 Takes a one‐row parameter data.frame and “unscales” its

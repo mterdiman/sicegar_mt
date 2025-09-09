@@ -10,24 +10,24 @@ parameterCalculation_h0(parameterVector, stepSize = 1e-05)
 \item{parameterVector}{A named list or data frame produced by
 \code{\link{sigFit}} or \code{\link{sigFit2}}, containing at minimum:
 \describe{
-  \item{\code{model}}{Either \dQuote{sigmoidal} or \dQuote{doublesigmoidal}.}
-  \item{\code{*_Estimate}}{Raw parameter estimates (renormalized back to the original scale).}
-  \item{\code{dataScalingParameters.timeRange},
-        \code{dataScalingParameters.intensityRange},
-        \code{dataScalingParameters.intensityMin}}{
-    Scaling parameters used to normalize/de‐normalize the data.}
+\item{\code{model}}{Either \dQuote{sigmoidal} or \dQuote{doublesigmoidal}.}
+\item{\code{*_Estimate}}{Raw parameter estimates (renormalized back to the original scale).}
+\item{\code{dataScalingParameters.timeRange},
+\code{dataScalingParameters.intensityRange},
+\code{dataScalingParameters.intensityMin}}{
+Scaling parameters used to normalize/de‐normalize the data.}
 }}
 
 \item{stepSize}{Numeric; finite‐difference increment for slope calculation. Default is \code{1e-05}.}
 }
 \value{
 The input \code{parameterVector}, augmented with new fields:
-  for sigmoidal: \code{midPoint_x}, \code{midPoint_y}, \code{slope}, etc.;
-  for double‐sigmoidal: \code{maximum_x}, \code{midPoint1_x}, \code{slope1},
-  \code{finalAsymptoteIntensity}, etc.
+for sigmoidal: \code{midPoint_x}, \code{midPoint_y}, \code{slope}, etc.;
+for double‐sigmoidal: \code{maximum_x}, \code{midPoint1_x}, \code{slope1},
+\code{finalAsymptoteIntensity}, etc.
 }
 \description{
 From the raw fit vector of either a sigmoidal or double‐sigmoidal
-  model, calculates intuitively interpretable quantities (e.g. peak times,
-  slopes at midpoints, plateau heights) and appends them to the parameter list.
+model, calculates intuitively interpretable quantities (e.g. peak times,
+slopes at midpoints, plateau heights) and appends them to the parameter list.
 }

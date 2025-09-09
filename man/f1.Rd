@@ -22,7 +22,7 @@ Numeric vector of \code{log(1/((1+e^{-B1(x-M1)})*(1+e^{B2(x-(M1+L))})))}.
 }
 \description{
 Computes the log of the core double‐sigmoidal form used for
-  optimizing the peak time.  This function is internal to the fitAndCategorize parameter
-  calculation.
+optimizing the peak time.  This function is internal to the fitAndCategorize parameter
+calculation.
 }
 \keyword{internal}

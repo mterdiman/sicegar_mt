@@ -54,6 +54,7 @@ multipleFitFunction_h0 <- function (dataInput, dataInputName = NA, model, n_runs
   residual_Sum_of_Squares_min <- Inf
   storedModelOutput <- c()
   storedModelOutput$residual_Sum_of_Squares <- Inf
+
   while (counterCorrectFit < n_runs_min & counterTotalFit <
          n_runs_max) {
     counterTotalFit <- counterTotalFit + 1
@@ -95,6 +96,7 @@ multipleFitFunction_h0 <- function (dataInput, dataInputName = NA, model, n_runs
     }
     if (modelOutput[["isThisaFit"]]) {
       counterCorrectFit <- counterCorrectFit + 1
+
       if (residual_Sum_of_Squares_min > modelOutput$residual_Sum_of_Squares) {
         counterBetterFit <- counterBetterFit + 1
         residual_Sum_of_Squares_min <- modelOutput$residual_Sum_of_Squares

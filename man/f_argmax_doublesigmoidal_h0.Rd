@@ -9,11 +9,11 @@ f_argmax_doublesigmoidal_h0(parameterVector)
 \arguments{
 \item{parameterVector}{A named list or data frame containing:
 \describe{
-  \item{\code{slope1Param_N_Estimate}}{Rising slope (raw).}
-  \item{\code{slope2Param_N_Estimate}}{Declining slope (raw).}
-  \item{\code{midPoint1Param_N_Estimate}}{Rising midpoint (raw).}
-  \item{\code{midPointDistanceParam_N_Estimate}}{Distance between midpoints (raw).}
-  \item{\code{dataScalingParameters.timeRange}}{Total time range scaling factor.}
+\item{\code{slope1Param_N_Estimate}}{Rising slope (raw).}
+\item{\code{slope2Param_N_Estimate}}{Declining slope (raw).}
+\item{\code{midPoint1Param_N_Estimate}}{Rising midpoint (raw).}
+\item{\code{midPointDistanceParam_N_Estimate}}{Distance between midpoints (raw).}
+\item{\code{dataScalingParameters.timeRange}}{Total time range scaling factor.}
 }}
 }
 \value{
@@ -21,6 +21,6 @@ Numeric scalar: the time (in original units) of the curve’s peak.
 }
 \description{
 Finds the time (within the scaled range) at which the fitted
-  double‐sigmoidal curve reaches its maximum.
+double‐sigmoidal curve reaches its maximum.
 }
 \keyword{internal}

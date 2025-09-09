@@ -15,17 +15,17 @@ multipleFitFunction_h0(
 )
 }
 \arguments{
-\item{dataInput}{A data frame (with columns `time` and `intensity`) or a list
-containing `timeIntensityData` and optional `dataScalingParameters`.  See
+\item{dataInput}{A data frame (with columns \code{time} and \code{intensity}) or a list
+containing \code{timeIntensityData} and optional \code{dataScalingParameters}.  See
 \code{\link{dataCheck}} for details.}
 
 \item{dataInputName}{Optional name to assign to the input dataset; used for
 tracking/identification when fitting multiple curves.  Defaults to NA.}
 
-\item{model}{Character; either `"sigmoidal"` or `"doublesigmoidal"`, indicating
+\item{model}{Character; either \code{"sigmoidal"} or \code{"doublesigmoidal"}, indicating
 which underlying model to fit.}
 
-\item{n_runs_min}{Integer; the minimum number of *successful* fits to perform
+\item{n_runs_min}{Integer; the minimum number of \emph{successful} fits to perform
 before stopping.  Defaults to 20.}
 
 \item{n_runs_max}{Integer; the maximum total number of fitting attempts allowed.
@@ -35,15 +35,17 @@ Defaults to 500.}
 number of successful fits, etc.) after each successful fit.  Defaults to FALSE.}
 
 \item{...}{Additional arguments passed to the underlying fitting function:
-\code{\link{sigFit}} when `model = "sigmoidal"`, or
-\code{\link{sigFit2}} when `model = "doublesigmoidal"`.}
+\code{\link{sigFit}} when \code{model = "sigmoidal"}, or
+\code{\link{sigFit2}} when \code{model = "doublesigmoidal"}.}
 }
 \value{
 A named list (invisibly) with components:
-  * All fit parameters and goodness‐of‐fit metrics from the best run,
-  * \code{betterFit}: count of times a new best residual was found,
-  * \code{correctFit}: count of successful fits,
-  * \code{totalFit}: total number of attempts made.
+\itemize{
+\item All fit parameters and goodness‐of‐fit metrics from the best run,
+\item \code{betterFit}: count of times a new best residual was found,
+\item \code{correctFit}: count of successful fits,
+\item \code{totalFit}: total number of attempts made.
+}
 }
 \description{
 Performs repeated fits of either the sigmoidal or double‐sigmoidal model to the

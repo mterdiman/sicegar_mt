@@ -51,9 +51,9 @@ for debugging (default FALSE).}
 }
 \value{
 A named list with components:
-  \item{decisionList}{All intermediate TRUE/FALSE tests and thresholds.}
-  \item{decision}{One of “no_signal”, “sigmoidal”, “double_sigmoidal” or “ambiguous”.}
-  \item{decisonSteps}{Which numbered tests were applied (as a single string).}
+\item{decisionList}{All intermediate TRUE/FALSE tests and thresholds.}
+\item{decision}{One of “no_signal”, “sigmoidal”, “double_sigmoidal” or “ambiguous”.}
+\item{decisonSteps}{Which numbered tests were applied (as a single string).}
 }
 \description{
 Runs a series of logical and AIC‐based tests to choose the best model

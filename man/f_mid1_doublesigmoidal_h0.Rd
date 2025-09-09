@@ -8,11 +8,13 @@ f_mid1_doublesigmoidal_h0(parameterDf)
 }
 \arguments{
 \item{parameterDf}{A data.frame or list containing at least:
-- `dataScalingParameters.timeRange`
-- `slope1Param_Estimate`
-- `midPoint1Param_Estimate`
-- `slope2Param_Estimate`
-- `midPointDistanceParam_Estimate`}
+\itemize{
+\item \code{dataScalingParameters.timeRange}
+\item \code{slope1Param_Estimate}
+\item \code{midPoint1Param_Estimate}
+\item \code{slope2Param_Estimate}
+\item \code{midPointDistanceParam_Estimate}
+}}
 }
 \value{
 A numeric scalar giving the time of the first half-maximum point.
